@@ -10,3 +10,6 @@ const Card = ({}: Props) => (
 );
 
 export default Card;
+
+// TODO トランプ1枚のデザインをcssでstylingする
+// TODO トランプをmockで48枚分作成し、並べる
