@@ -22,7 +22,7 @@ Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&ut
 
 ## Notes
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+この例では、TypeScript のタイプシステムを Next.js に統合する方法をご紹介します。Next.js では TypeScript がすぐにサポートされているので、必要なのは TypeScript をインストールすることだけです。
 
 ```
 npm install --save-dev typescript

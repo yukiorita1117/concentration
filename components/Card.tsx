@@ -1,15 +1,26 @@
 import * as React from "react";
+import styled from "styled-components";
 
-type Props = {};
+type Props = {
+  mark: string;
+  num: number;
+};
 
-const Card = ({}: Props) => (
-  <div>
-    <span>♠️</span>
-    <div>12</div>
-  </div>
+const Container = styled.div`
+  position: relative;
+  margin: auto;
+  width: 50px;
+  height: 80px;
+  border: 1px solid;
+`;
+
+const Card = ({ mark, num }: Props) => (
+  <Container>
+    <span>{mark}</span>
+    <div>{num}</div>
+  </Container>
 );
 
 export default Card;
 
 // TODO トランプ1枚のデザインをcssでstylingする
-// TODO トランプをmockで48枚分作成し、並べる
