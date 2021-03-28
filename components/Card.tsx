@@ -7,11 +7,11 @@ type Props = {
 };
 
 const Container = styled.div`
-  position: relative;
   margin: auto;
   width: 50px;
   height: 80px;
   border: 1px solid;
+  border-radius: 5%;
 `;
 
 const Card = ({ mark, num }: Props) => (
@@ -22,5 +22,3 @@ const Card = ({ mark, num }: Props) => (
 );
 
 export default Card;
-
-// TODO トランプ1枚のデザインをcssでstylingする
