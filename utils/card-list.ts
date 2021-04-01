@@ -3,6 +3,7 @@ type CardType = {
   num: number;
 };
 
+// TODO 出力時にrandomにしておく
 const cardGenerator = () => {
   const result: CardType[] = [];
   const marks = ["♠️", "❤️", "♣️", "♦︎"];
