@@ -4,6 +4,8 @@ type CardType = {
 };
 
 // TODO 出力時にrandomにしておく
+// Fisher–Yatesアルゴリズムを用いる
+
 const cardGenerator = () => {
   const result: CardType[] = [];
   const marks = ["♠️", "❤️", "♣️", "♦︎"];
@@ -18,5 +20,16 @@ const cardGenerator = () => {
   //   console.log("cards", result);
   return result;
 };
+
+const randomCardList = cardGenerator();
+
+for (var i = randomCardList.length - 1; i > 0; i--) {
+  var r = Math.floor(Math.random() * (i + 1));
+  var tmp = randomCardList[i];
+  randomCardList[i] = randomCardList[r];
+  randomCardList[r] = tmp;
+}
+
+console.log("random::", randomCardList);
 
 export const cardList = cardGenerator();
