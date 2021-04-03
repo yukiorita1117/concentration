@@ -30,7 +30,7 @@ for (var i = randomCardList.length - 1; i > 0; i--) {
   randomCardList[r] = tmp;
 }
 
-// TODO まだ結果見ていない
+// TODO randomの配列になっているか確認
 console.log("random::", randomCardList);
 
 export const cardList = cardGenerator();
