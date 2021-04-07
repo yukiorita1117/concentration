@@ -13,13 +13,19 @@ const Field = styled.div`
   align-content: flex-start;
 `;
 
+const ReverceCard = styled.img``;
+
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
     <h1>神経衰弱 at Next.js 👋</h1>
     <Field>
       {cardList.map((card) => {
         return (
-          <Card key={card.mark + card.num} mark={card.mark} num={card.num} />
+          <>
+            {/* なぜかimgタグの画像が表示されない */}
+            <ReverceCard src="./reverce.jpg" />
+            <Card key={card.mark + card.num} mark={card.mark} num={card.num} />
+          </>
         );
       })}
     </Field>
