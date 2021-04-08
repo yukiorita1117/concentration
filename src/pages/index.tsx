@@ -23,7 +23,7 @@ const IndexPage = () => (
         return (
           <>
             {/* なぜかimgタグの画像が表示されない */}
-            <ReverceCard src="./reverce.jpg" />
+            <img src="/public/reverce.jpeg" alt="RC" />
             <Card key={card.mark + card.num} mark={card.mark} num={card.num} />
           </>
         );
