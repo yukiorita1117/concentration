@@ -25,14 +25,14 @@ const IndexPage = () => {
           return (
             <>
               {/* TODO  clickしたら ReverceCard をdisable にする  */}
-              {/* cosme で styled-componentsへ propsを渡してそれでstyleを切り替えていた方法を使う
-               */}
-              <StyledReverceImage />
-              <Card
-                key={card.mark + card.num}
-                mark={card.mark}
-                num={card.num}
-              />
+              <div>
+                {/* <StyledReverceImage /> */}
+                <Card
+                  key={card.mark + card.num}
+                  mark={card.mark}
+                  num={card.num}
+                />
+              </div>
             </>
           );
         })}
