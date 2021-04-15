@@ -4,10 +4,9 @@ import styled from "styled-components";
 type Props = {};
 
 const Container = styled.div`
-  top: 5px;
+  top: 90px;
   position: relative;
-  left: 55.3px;
-  color: ffffff;
+  left: 5.3px;
 `;
 
 const ReverceImage = ({}: Props) => (

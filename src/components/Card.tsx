@@ -27,8 +27,12 @@ const Card = ({ mark, num }: Props) => {
   };
   return (
     <>
-      {isdisable && <StyledReverceImage />}
-      <Container onClick={(e: any) => handleClick(e)}>
+      {isdisable && (
+        <div onClick={(e: any) => handleClick(e)}>
+          <StyledReverceImage />
+        </div>
+      )}
+      <Container>
         <span>{mark}</span>
         <div>{num}</div>
       </Container>
