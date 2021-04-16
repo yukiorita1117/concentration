@@ -24,9 +24,7 @@ const IndexPage = () => {
         {cardList.map((card) => {
           return (
             <>
-              {/* TODO  clickしたら ReverceCard をdisable にする  */}
               <div>
-                {/* <StyledReverceImage /> */}
                 <Card
                   key={card.mark + card.num}
                   mark={card.mark}
