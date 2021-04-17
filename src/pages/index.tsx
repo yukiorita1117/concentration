@@ -15,6 +15,14 @@ const Field = styled.div`
 
 const StyledReverceImage = styled(ReverceImage)``;
 
+const Wrapper = styled.div`
+  width: 200px;
+`;
+
+const StyledText = styled.p`
+  /* white-space: pre-wrap; */
+`;
+
 const IndexPage = () => {
   return (
     <Layout title="👋 Concentration">
