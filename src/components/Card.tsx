@@ -16,6 +16,7 @@ const Container = styled.div`
   border-radius: 5%;
   margin-top: 4px;
   margin-left: 4px;
+  background-color: white;
 `;
 
 const Card = ({ mark, num }: Props) => {
