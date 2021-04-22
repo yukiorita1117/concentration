@@ -71,6 +71,7 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       //  ProviderはReactのcontextの仕組み。コンテクストを使用することで、中間の要素群を経由してプロパティを渡すことを避けることができる
+      // 参照:https://styled-components.com/docs/advanced
       <ThemeProvider theme={theme}>
         <Container>
           <GlobalStyle />
