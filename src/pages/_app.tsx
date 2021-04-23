@@ -66,18 +66,45 @@ const theme = {
   },
 };
 
-export default class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      //  ProviderはReactのcontextの仕組み。コンテクストを使用することで、中間の要素群を経由してプロパティを渡すことを避けることができる
-      // 参照:https://styled-components.com/docs/advanced
+// class componentで書いた場合
+
+// // Next.jsの Appを継承することで、ページの初期化を制御できる様になる。
+// つまりは以下の設定が可能になります：
+// ページ移動間の固定レイアウト
+// componentDidCatchを使用したカスタムエラーハンドリング
+// 状態管理ライブラリとの結合
+// Reduxの <Provider>でラップするなど
+// 全ページで必要な挙動を書ける場所なので、他にも広告まわりの関数の実行や、NProgressなどのローディングを設定したりしています。
+// // これを行い、Globalなstyleを追加する。
+// // 参照: https://nextjs.org/docs/advanced-features/custom-app
+
+// export default class MyApp extends App {
+//   render() {
+//     const { Component, pageProps } = this.props;
+//     return (
+//       //  ProviderはReactのcontextの仕組み。コンテクストを使用することで、中間の要素群を経由してプロパティを渡すことを避けることができる
+//       // 参照:https://styled-components.com/docs/advanced
+//       <ThemeProvider theme={theme}>
+//         <Container>
+//           <GlobalStyle />
+//           <Component {...pageProps} />
+//         </Container>
+//       </ThemeProvider>
+//     );
+//   }
+// }
+
+// functional componentで書く
+export default function MyApp({ Component, pageProps }: any) {
+  return (
+    <>
       <ThemeProvider theme={theme}>
-        <Container>
-          <GlobalStyle />
-          <Component {...pageProps} />
-        </Container>
+        {/* ハッシュへのスクロールを処理するための Containerコンポーネントは現在不必要になった。この機能はツリー上に移動している */}
+        {/* <Container> */}
+        <GlobalStyle />
+        <Component {...pageProps} />
+        {/* </Container> */}
       </ThemeProvider>
-    );
-  }
+    </>
+  );
 }
