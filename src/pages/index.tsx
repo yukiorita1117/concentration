@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import Layout from "../components/Layout";
 import { cardList } from "../utils/card-list";
 import styled from "styled-components";
+import SampleForm from "../components/SampleForm";
 
 // TODO random()を発火させてCardコンポーネントを再レンダリングするためのhandlerとそのhandlerを発火するためのButtonを作る。
 
@@ -31,6 +32,7 @@ const IndexPage = () => {
             </>
           );
         })}
+        <SampleForm />
       </Field>
     </Layout>
   );
