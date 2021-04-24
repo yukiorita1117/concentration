@@ -15,26 +15,26 @@ const Field = styled.div`
 
 const IndexPage = () => {
   return (
-    <Layout title="👋 Concentration">
-      <h1>神経衰弱 at Next.js 👋</h1>
+    <SampleForm />
 
-      <Field>
-        {cardList.map((card) => {
-          return (
-            <>
-              <div>
-                <Card
-                  key={card.mark + card.num}
-                  mark={card.mark}
-                  num={card.num}
-                />
-              </div>
-            </>
-          );
-        })}
-        <SampleForm />
-      </Field>
-    </Layout>
+    // <Layout title="👋 Concentration">
+    //   <h1>神経衰弱 at Next.js 👋</h1>
+    //   <Field>
+    //     {cardList.map((card) => {
+    //       return (
+    //         <>
+    //           <div>
+    //             <Card
+    //               key={card.mark + card.num}
+    //               mark={card.mark}
+    //               num={card.num}
+    //             />
+    //           </div>
+    //         </>
+    //       );
+    //     })}
+    //   </Field>
+    // </Layout>
   );
 };
 
