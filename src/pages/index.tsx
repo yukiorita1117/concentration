@@ -1,7 +1,8 @@
+import { GetServerSideProps } from "next";
 import React from "react";
-import Card from "../components/Card";
-import Layout from "../components/Layout";
-import { cardList } from "../utils/card-list";
+// import Card from "../components/Card";
+// import Layout from "../components/Layout";
+// import { cardList } from "../utils/card-list";
 import styled from "styled-components";
 import SampleForm from "../components/SampleForm";
 
@@ -12,6 +13,10 @@ const Field = styled.div`
   flex-wrap: wrap;
   align-content: flex-start;
 `;
+
+type Props = {
+  data: any;
+};
 
 const IndexPage = () => {
   return (
@@ -36,6 +41,17 @@ const IndexPage = () => {
     //   </Field>
     // </Layout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const data: any = await fetch("https://myapi.dev/ssr").then((res) =>
+    res.json()
+  );
+  return {
+    props: {
+      data,
+    },
+  };
 };
 
 export default IndexPage;
