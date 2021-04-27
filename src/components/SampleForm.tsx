@@ -43,12 +43,12 @@ const SampleForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-  const { data, error } = useSWR<any>("csr", () =>
-    fetch("https://myapi.dev/csr").then((res) => res.json())
-  );
-  console.log("受け取れてない？？::", data, error);
-  if (error) return <>error!</>;
-  if (!data) return <>...loading</>;
+  // const { data, error } = useSWR<any>("csr", () =>
+  //   fetch("https://myapi.dev/csr").then((res) => res.json())
+  // );
+  // console.log("受け取れてない？？::", data, error);
+  // if (error) return <>error!</>;
+  // if (!data) return <>...loading</>;
 
   const onSubmit = (data: any) => console.log(data);
   return (
