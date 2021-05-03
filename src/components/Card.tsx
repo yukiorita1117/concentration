@@ -16,6 +16,7 @@ const Container = styled.div`
   border-radius: 5%;
   margin-top: 4px;
   margin-left: 4px;
+  color: black;
   background-color: white;
 `;
 
