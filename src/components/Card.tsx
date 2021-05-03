@@ -20,12 +20,33 @@ const Container = styled.div`
   background-color: white;
 `;
 
+const stockCardNumber = [];
+
+const compareNum = (numArray: number[]) => {
+  // compare cards. if match => match flag is true.
+  if (numArray[0] === numArray[1])
+    console.log(
+      "マッチ!!!!🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉",
+      numArray[0],
+      numArray[1]
+    );
+  // もし false だった場合（カードがマッチしなかった場合） は isdisable をtrue にする必要がある。
+};
+
 const Card = ({ mark, num }: Props) => {
   const [isdisable, setIsdisable] = React.useState(true);
 
   const handleClick = (e: any) => {
-    console.log("クリックイベント", e.target);
+    console.log("クリックイベント::番号", num);
     setIsdisable(false);
+    stockCardNumber.push(num);
+
+    console.log("配列の中身は？？？::", stockCardNumber);
+
+    if (stockCardNumber.length === 2) {
+      compareNum(stockCardNumber);
+      stockCardNumber.length = 0;
+    }
   };
   return (
     <>
