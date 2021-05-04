@@ -30,6 +30,16 @@ for (var i = randomCardList.length - 1; i > 0; i--) {
   randomCardList[r] = tmp;
 }
 
-console.log("random::", randomCardList);
+// console.log("random::", randomCardList);
 
-export const cardList = randomCardList;
+// テスト用
+const testList = [
+  { mark: "❤️", num: 10 },
+  { mark: "❤️", num: 10 },
+  { mark: "❤️", num: 11 },
+  { mark: "❤️", num: 11 },
+];
+
+export const cardList = testList;
+
+// export const cardList = randomCardList;

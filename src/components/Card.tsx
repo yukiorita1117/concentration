@@ -71,6 +71,9 @@ const Card = ({ mark, num }: Props) => {
 
   console.log("1,2枚目のboolean値", isdisable1, isdisable2);
 
+  // 1枚目のカード番号を取得しておき、2枚目選択後、不一致であれば そのidのDOMに以下を差し込む。
+  // <div><div class="ReverceImage__Container-yykbpo-0 bSWqJZ"><img src="reverce.jpeg" width="50" height="80" alt="RC"></div></div>
+
   return (
     <>
       {!(isdisable1 === false || isdisable2 === false) && (
