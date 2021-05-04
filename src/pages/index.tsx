@@ -23,11 +23,7 @@ const tmpDisableFlugNum = [];
 const compareNum = (numArray: number[]) => {
   // compare cards. if match => match flag is true.
   if (numArray[0] === numArray[1]) {
-    console.log(
-      "マッチ!!!!🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉",
-      numArray[0],
-      numArray[1]
-    );
+    alert("マッチ!!!!🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
     return true;
   }
   // もし false だった場合（カードがマッチしなかった場合） は isdisable をtrue にする必要がある。
@@ -55,7 +51,11 @@ const IndexPage = () => {
     } else if (stockCardNumber.length === 1) {
       console.log("ええええ");
 
-      setIsdisable2(false);
+      if (disableFlugNum === 0) setIsdisable1(false);
+      if (disableFlugNum === 1) setIsdisable2(false);
+      if (disableFlugNum === 2) setIsdisable3(false);
+      if (disableFlugNum === 3) setIsdisable4(false);
+
       stockCardNumber.push(num);
 
       const flag = compareNum(stockCardNumber);
