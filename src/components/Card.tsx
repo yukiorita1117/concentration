@@ -31,6 +31,7 @@ const compareNum = (numArray: number[]) => {
       numArray[1]
     );
   // もし false だった場合（カードがマッチしなかった場合） は isdisable をtrue にする必要がある。
+  // TODO どうやって一致しなかったカードを元に戻す？
 };
 
 const Card = ({ mark, num }: Props) => {
@@ -55,7 +56,7 @@ const Card = ({ mark, num }: Props) => {
           <StyledReverceImage />
         </div>
       )}
-      <Container>
+      <Container key={num}>
         <span>{mark}</span>
         <div>{num}</div>
       </Container>
