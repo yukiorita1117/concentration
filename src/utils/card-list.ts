@@ -35,8 +35,8 @@ for (var i = randomCardList.length - 1; i > 0; i--) {
 // テスト用
 const testList = [
   { mark: "❤️", num: 10 },
+  { mark: "❤️", num: 12 },
   { mark: "❤️", num: 10 },
-  { mark: "❤️", num: 11 },
   { mark: "❤️", num: 11 },
 ];
 
