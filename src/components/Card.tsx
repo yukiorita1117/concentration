@@ -24,34 +24,56 @@ const stockCardNumber = [];
 
 const compareNum = (numArray: number[]) => {
   // compare cards. if match => match flag is true.
-  if (numArray[0] === numArray[1])
+  if (numArray[0] === numArray[1]) {
     console.log(
       "マッチ!!!!🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉",
       numArray[0],
       numArray[1]
     );
+    return true;
+  }
   // もし false だった場合（カードがマッチしなかった場合） は isdisable をtrue にする必要がある。
-  // TODO どうやって一致しなかったカードを元に戻す？
+  if (numArray[0] !== numArray[1]) {
+    return false;
+  }
 };
 
 const Card = ({ mark, num }: Props) => {
-  const [isdisable, setIsdisable] = React.useState(true);
+  const [isdisable1, setIsdisable1] = React.useState(true);
+  const [isdisable2, setIsdisable2] = React.useState(true);
 
   const handleClick = (e: any) => {
     console.log("クリックイベント::番号", num);
-    setIsdisable(false);
-    stockCardNumber.push(num);
 
-    console.log("配列の中身は？？？::", stockCardNumber);
+    if (stockCardNumber.length === 0) {
+      console.log("あああああ");
+      setIsdisable1(false);
+      stockCardNumber.push(num);
+    } else if (stockCardNumber.length === 1) {
+      console.log("ええええ");
 
-    if (stockCardNumber.length === 2) {
-      compareNum(stockCardNumber);
+      setIsdisable2(false);
+      stockCardNumber.push(num);
+
+      const flag = compareNum(stockCardNumber);
+      if (flag === false) {
+        setTimeout(() => {
+          // カードを裏側にする。
+          setIsdisable1(true);
+          setIsdisable2(true);
+        }, 1500);
+        console.log("1,2枚目のboolean値2", isdisable1, isdisable2);
+      }
+      console.log("ストックナンバー::", stockCardNumber);
       stockCardNumber.length = 0;
     }
   };
+
+  console.log("1,2枚目のboolean値", isdisable1, isdisable2);
+
   return (
     <>
-      {isdisable && (
+      {!(isdisable1 === false || isdisable2 === false) && (
         <div onClick={(e: any) => handleClick(e)}>
           <StyledReverceImage />
         </div>
