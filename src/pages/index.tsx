@@ -35,6 +35,8 @@ const IndexPage = () => {
   const [isdisable3, setIsdisable3] = React.useState(true);
   const [isdisable4, setIsdisable4] = React.useState(true);
 
+  // TODO  disableFlugNum と setIsdisable[num] は 脱ハードコードできるので挑戦したい。
+  //  isdisable1とかの1をどうにかフレキシブルにできればいけそう。
   const handleClick = (num: number, disableFlugNum: number) => {
     if (stockCardNumber.length === 0) {
       if (disableFlugNum === 0) setIsdisable1(false);
